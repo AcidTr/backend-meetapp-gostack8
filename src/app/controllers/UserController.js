@@ -2,7 +2,7 @@ import User from '../models/User';
 
 class UserController {
   async store(req, res) {
-    const userEmailExits = await User.findOne({ where: req.body.email });
+    const userEmailExits = await User.findOne({ where: { email: req.body.email } });
 
     if (userEmailExits) {
       return res.status(400).json({ error: "User email already exists" });
