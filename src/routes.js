@@ -6,6 +6,7 @@ import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FileController';
 import MeetupController from './app/controllers/MeetupController';
+import OrganizationController from './app/controllers/OrganizationController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -28,5 +29,7 @@ routes.put('/meetups/:id', MeetupController.update);
 routes.delete('/meetups/:id', MeetupController.delete);
 
 routes.post('/files', upload.single('file'), FileController.store);
+
+routes.get('/organization', OrganizationController.index);
 
 export default routes;
