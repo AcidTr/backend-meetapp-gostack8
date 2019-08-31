@@ -6,10 +6,11 @@ import authConfig from '../../config/auth';
 
 class SessionController {
   async store(req, res) {
-
-    //Yup validation user data
+    // Yup validation user data
     const schema = Yup.object().shape({
-      email: Yup.string().email().required(),
+      email: Yup.string()
+        .email()
+        .required(),
       password: Yup.string().required(),
     });
 
